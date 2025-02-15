@@ -1,3 +1,5 @@
+// Filename: Main.java
+
 public class Main {
     public static void main(String[] args) {
         Clinic clinic = new Clinic();
@@ -7,15 +9,14 @@ public class Main {
         clinic.addPatient("Steve", "Moore", "STVMRE");
         clinic.addPatient("Susan", "Madison", "SSNMDS");
 
-        clinic.addDoctor("George", "Sun","SNUGRG", 14,"Physician");
-        clinic.addDoctor("Kate", "Love", "LVOKTA",86,"Physician");
+        clinic.addDoctor("George", "Sun", "SNUGRG", 14, "Physician");
+        clinic.addDoctor("Kate", "Love", "LVOKTA", 86, "Physician");
 
         try {
             clinic.assignPatientToDoctor("SSNMDS", 86);
             clinic.assignPatientToDoctor("ALCGRN", 14);
             clinic.assignPatientToDoctor("RBTSMT", 14);
             clinic.assignPatientToDoctor("STVMRE", 14);
-
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -23,7 +24,8 @@ public class Main {
         try {
             clinic.getDoctor(-1);
         } catch (Exception ex) {
-            System.out.println("As expected we got the following exception for doctor -1:" + ex);
+            System.out.println("Expected exception for doctor -1: " + ex);
+
         }
     }
 }
